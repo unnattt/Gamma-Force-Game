@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveBlocks : MonoBehaviour
 {
+    [SerializeField] float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class MoveBlocks : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position= new Vector3(transform.position.x-0.1f, transform.position.y,transform.position.z);
+        transform.position= new Vector3(transform.position.x- speed, transform.position.y,transform.position.z);
     }
 }

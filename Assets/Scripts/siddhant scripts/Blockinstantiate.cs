@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Blockinstantiate : MonoBehaviour
 {
-    [SerializeField] GameObject platform;
+    public GameObject[] platforms;
     float randomizetime;
     float xmax;
     float ymin;
@@ -23,7 +23,8 @@ public class Blockinstantiate : MonoBehaviour
     }
     public void blocksinstantiating()
     {
-        Vector3 inspos = Camera.main.ViewportToWorldPoint(new Vector3(1.3f,Random.Range(0.3f,0.65f),16f));
-        GameObject platformins = Instantiate(platform, inspos,Quaternion.identity);
+        
+        Vector3 inspos = Camera.main.ViewportToWorldPoint(new Vector3(1.3f,Random.Range(0.2f,0.5f),10f));
+        GameObject platformins = Instantiate(platforms[Random.Range(0,platforms.Length)], inspos, Quaternion.identity);
     }
 }
